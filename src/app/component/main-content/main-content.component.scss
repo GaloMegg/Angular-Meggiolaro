@@ -1,0 +1,22 @@
+.mainContent {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 5vh 1fr;
+    grid-template-columns: 20% 1fr;
+    grid-template-areas:
+        "nav nav"
+        "aside content";
+
+    .navBarGrid {
+        grid-area: nav;
+    }
+
+    .asideContentGrid {
+        grid-area: aside;
+    }
+
+    .contentGrid {
+        grid-area: content;
+    }
+}
