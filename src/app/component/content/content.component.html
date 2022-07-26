@@ -1,3 +1,17 @@
 <article class="content">
+    <div *ngFor="let student of students" class="content__item">
+        <div class="content__item--img-container">
 
+            <img src={{student.image}} *ngIf="student.image" alt="" class="content__item--img">
+        </div>
+        <h3 [ngClass]=" student.isActive ?'': 'disabled' " class="content__item--data">{{student.name}}
+            {{student.surname}} {{student.age}} </h3>
+        <div class="content__item--buttons">
+            <button (click)="changeStatus(student.id)" class="btn btn-primary">
+                <span *ngIf="student.isActive">Deactivate</span>
+                <span *ngIf="!student.isActive">Activate</span>
+            </button>
+            <button (click)="deleteStudent(student.id)" class="btn btn-danger">Eliminar</button>
+        </div>
+    </div>
 </article>
